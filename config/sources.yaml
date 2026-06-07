@@ -1,0 +1,676 @@
+dataset:
+  name: indian-tts-youtube-curated-60min
+  target_total_minutes: 60
+  buckets:
+    indian_english:
+      language_code: en-IN
+      language_name: Indian English
+      target_minutes: 30
+    hindi:
+      language_code: hi-IN
+      language_name: Hindi
+      target_minutes: 30
+
+quality:
+  min_segment_seconds: 20
+  max_segment_seconds: 70
+  target_sample_rate: 16000
+  target_channels: 1
+
+# INSTRUCTIONS FOR FINDING GOOD SOURCES:
+# 1. Search YouTube for:
+#    Indian English: "TEDx India", "Indian podcast interview", "NDTV English news anchor", "Indian English storytelling"
+#    Hindi: "Hindi news anchor", "Hindi podcast", "Hindi storytelling", "Hindi narration", "Hindi vlog"
+#
+# 2. Look for videos with:
+#    - Single speaker (no overlapping voices)
+#    - Clear audio (no background music during speech)
+#    - Natural speech (not heavily scripted/robotic)
+#    - Sections of 30-60 seconds continuous speech
+#
+# 3. For each video:
+#    - Listen to find 3-5 clean segments
+#    - Note the exact timestamps (start/end)
+#    - Avoid intro music, applause, audience questions
+#
+# 4. Replace the example URLs below with your actual findings
+
+sources:
+  # ============================================
+  # INDIAN ENGLISH SOURCES (Need ~30 minutes)
+  # ============================================
+
+  # Example 1: TEDx Talk or similar
+  - id: en_tedx_long_001
+    url: "https://www.youtube.com/watch?v=d23lHjvqFY4"
+    bucket: indian_english
+    language_code: en-IN
+    language_name: Indian English
+    expected_speaker: pooja_jambotkar
+    license_note: "TEDx - CC BY-NC-ND"
+    source_notes: "17-minute TEDx talk, consistently good quality throughout."
+    candidate_segments:
+      # Early section
+      - id: en_tedx_long_001_seg01
+        start: "00:00:59"
+        end: "00:01:58"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Opening remarks"
+
+      - id: en_tedx_long_001_seg02
+        start: "00:03:05"
+        end: "00:04:02"
+        emotion_hint: excited
+        style_hint: formal
+        notes: "Introduction of topic"
+
+      # Middle section
+      - id: en_tedx_long_001_seg03
+        start: "00:04:45"
+        end: "00:05:43"
+        emotion_hint: serious
+        style_hint: formal
+        notes: "Main argument"
+
+      - id: en_tedx_long_001_seg04
+        start: "00:07:17"
+        end: "00:08:12"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Supporting example"
+
+      - id: en_tedx_long_001_seg05
+        start: "00:09:05"
+        end: "00:09:59"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Points on the topic"
+
+      - id: en_tedx_long_001_seg06
+        start: "00:10:00"
+        end: "00:11:02"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Supporting example"
+
+      # Late section
+      - id: en_tedx_long_001_seg07
+        start: "00:13:18"
+        end: "00:14:08"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Points on topic"
+
+      - id: en_tedx_long_001_seg08
+        start: "00:16:20"
+        end: "00:17:12"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Conclusion"
+  
+  - id: en_tedx_long_002
+    url: "https://www.youtube.com/watch?v=lhv72TsRvHU"
+    bucket: indian_english
+    language_code: en-IN
+    language_name: Indian English
+    expected_speaker: amina_nijam
+    license_note: "TEDx - CC BY-NC-ND"
+    source_notes: "17-minute TEDx talk, consistently good quality throughout."
+    candidate_segments:
+      # Early section
+      - id: en_tedx_long_002_seg01
+        start: "00:00:12"
+        end: "00:01:11"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Opening remarks"
+
+      - id: en_tedx_long_002_seg02
+        start: "00:03:05"
+        end: "00:04:01"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "speakers past"
+
+      # Middle section
+      - id: en_tedx_long_002_seg03
+        start: "00:04:02"
+        end: "00:05:01"
+        emotion_hint: disappointed
+        style_hint: formal
+        notes: "speakers past"
+
+      - id: en_tedx_long_002_seg04
+        start: "00:05:07"
+        end: "00:06:04"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Supporting example"
+
+      - id: en_tedx_long_002_seg05
+        start: "00:06:14"
+        end: "00:07:10"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Points on the topic"
+
+      - id: en_tedx_long_002_seg06
+        start: "00:07:11"
+        end: "00:08:09"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Points on the topic"
+
+      - id: en_tedx_long_002_seg07
+        start: "00:08:09"
+        end: "00:09:10"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Points on topic"
+
+      - id: en_tedx_long_002_seg08
+        start: "00:16:47"
+        end: "00:17:48"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Conclusion"
+
+  # Example 2: Palki Sharma Speech - New India
+  - id: en_palki_speech_001                                                                                                                                                                                      
+    url: "https://www.youtube.com/watch?v=2o14gf4uQac"
+    bucket: indian_english                                                                                                                                                                                       
+    language_code: en-IN                                                                                                                                                                                         
+    language_name: Indian English
+    expected_speaker: palki_sharma
+    license_note: "News content - verify license for educational/research use"
+    source_notes: "Palki Sharma speech on New India - single speaker, professional audio quality."
+    candidate_segments:
+      # Opening section
+      - id: en_palki_speech_001_seg01
+        start: "00:00:12"
+        end: "00:01:11"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Speech opening - ignore random noise"
+
+      - id: en_palki_speech_001_seg02
+        start: "00:01:27"
+        end: "00:02:22"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Topic introduction - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg03
+        start: "00:02:27"
+        end: "00:03:22"
+        emotion_hint: serious
+        style_hint: formal
+        notes: "Topic discussion - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg04
+        start: "00:03:37"
+        end: "00:04:30"
+        emotion_hint: excited
+        style_hint: formal
+        notes: "Passionate point - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg05
+        start: "00:04:34"
+        end: "00:05:32"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Topic discussion - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg06
+        start: "00:05:37"
+        end: "00:06:35"
+        emotion_hint: neutral
+        style_hint: formal
+        notes: "Topic discussion - ignore clapping sounds"
+
+      # Late section
+      - id: en_palki_speech_001_seg07
+        start: "00:23:41"
+        end: "00:24:33"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Positive note - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg08
+        start: "00:24:37"
+        end: "00:25:42"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Positive note - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg09
+        start: "00:25:47"
+        end: "00:26:41"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Positive note - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg10
+        start: "00:26:44"
+        end: "00:27:45"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Positive note - ignore clapping sounds"
+
+      - id: en_palki_speech_001_seg11
+        start: "00:27:50"
+        end: "00:28:50"
+        emotion_hint: happy
+        style_hint: formal
+        notes: "Conclusion - ignore clapping sounds"
+      
+
+  # Example 3: News Anchor (for formal/news style)
+  - id: en_news_debate_001                                                                                                                                                                                       
+    url: "https://www.youtube.com/watch?v=YH2URVnWFCU"                                                                                                                                                    
+    bucket: indian_english                                                                                                                                                                                       
+    language_code: en-IN                                                                                                                                                                                         
+    language_name: Indian English
+    expected_speaker: arnab_goswami
+    license_note: "News content - verify fair use for educational purposes"
+    source_notes: "Debate show - ONLY using solo anchor segments. Avoiding all panel discussion portions."
+    candidate_segments:
+      # Opening monologue (usually first 2-3 minutes - BEST SOURCE)
+      - id: en_news_debate_001_seg01
+        start: "00:01:07"
+        end: "00:01:45"
+        emotion_hint: serious
+        style_hint: news
+        notes: "Opening statement - solo anchor"
+
+      - id: en_news_debate_001_seg02
+        start: "00:01:57"
+        end: "00:02:52"
+        emotion_hint: serious
+        style_hint: news
+        notes: "Topic introduction - verify no guest interruption"
+
+      - id: en_news_debate_001_seg03
+        start: "00:02:59"
+        end: "00:04:00"
+        emotion_hint: angry
+        style_hint: news
+        notes: "Solo commentary - confirm single speaker only"
+
+      - id: en_news_debate_001_seg04
+        start: "00:04:02"
+        end: "00:05:00"
+        emotion_hint: serious
+        style_hint: news
+        notes: "Solo commentary - arguement"
+
+      - id: en_news_debate_001_seg05
+        start: "00:05:01"
+        end: "00:05:58"
+        emotion_hint: serious
+        style_hint: news
+        notes: "Solo commentary - arguement"
+
+      - id: en_news_debate_001_seg06
+        start: "00:05:59"
+        end: "00:06:51"
+        emotion_hint: serious
+        style_hint: news
+        notes: "Solo commentary - arguement"
+
+      - id: en_news_debate_001_seg07
+        start: "00:06:55"
+        end: "00:07:53"
+        emotion_hint: empathy
+        style_hint: news
+        notes: "Solo commentary - addressing the victim"
+
+      - id: en_news_debate_001_seg08
+        start: "00:08:29"
+        end: "00:09:27"
+        emotion_hint: empathy
+        style_hint: news
+        notes: "Solo commentary - providing a solution to the victim"
+
+      - id: en_news_debate_001_seg09
+        start: "00:09:32"
+        end: "00:10:02"
+        emotion_hint: neutral
+        style_hint: news
+        notes: "Closing remarks - just before starting debate"
+
+  # ============================================
+  # HINDI SOURCES (Need ~30 minutes)
+  # ============================================
+
+  # Hindi Astrology - Astro Arun Pandit (12 Rashis)
+  - id: hi_astrology_001
+    url: "https://www.youtube.com/watch?v=Y9hwNeFMRm8"
+    bucket: hindi
+    language_code: hi-IN
+    language_name: Hindi
+    expected_speaker: astro_arun_pandit
+    license_note: "Astrology content - verify license for educational use"
+    source_notes: "Hindi astrology predictions by Astro Arun Pandit. 12 segments for 12 rashis. Single speaker, clear audio."
+    candidate_segments:
+      # Mesh Rashi (Aries)
+      - id: hi_astrology_001_seg01
+        start: "00:01:21"
+        end: "00:02:23"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Mesh Rashi"
+
+      # Vrishabh Rashi (Taurus)
+      - id: hi_astrology_001_seg02
+        start: "00:05:55"
+        end: "00:06:50"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Vrishabh Rashi"
+
+      # Mithun Rashi (Gemini)
+      - id: hi_astrology_001_seg03
+        start: "00:10:12"
+        end: "00:11:11"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Mithun Rashi"
+
+      # Kark Rashi (Cancer)
+      - id: hi_astrology_001_seg04
+        start: "00:15:12"
+        end: "00:16:10"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Kark Rashi"
+
+      # Singh Rashi (Leo)
+      - id: hi_astrology_001_seg05
+        start: "00:19:23"
+        end: "00:20:17"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Singh Rashi"
+
+      # Kanya Rashi (Virgo)
+      - id: hi_astrology_001_seg06
+        start: "00:24:30"
+        end: "00:25:28"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Kanya Rashi"
+
+      # Tula Rashi (Libra)
+      - id: hi_astrology_001_seg07
+        start: "00:29:12"
+        end: "00:30:06"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Tula Rashi"
+
+      # Vrishchik Rashi (Scorpio)
+      - id: hi_astrology_001_seg08
+        start: "00:34:24"
+        end: "00:35:25"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Vrishchik Rashi"
+
+      # Dhanu Rashi (Sagittarius)
+      - id: hi_astrology_001_seg09
+        start: "00:38:33"
+        end: "00:39:27"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Dhanu Rashi"
+
+      # Makar Rashi (Capricorn)
+      - id: hi_astrology_001_seg10
+        start: "00:43:40"
+        end: "00:44:35"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Makar Rashi"
+
+      # Kumbh Rashi (Aquarius)
+      - id: hi_astrology_001_seg11
+        start: "00:48:34"
+        end: "00:49:34"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Kumbh Rashi"
+
+      # Meen Rashi (Pisces)
+      - id: hi_astrology_001_seg12
+        start: "00:53:01"
+        end: "00:53:58"
+        emotion_hint: calm
+        style_hint: devotional
+        notes: "Meen Rashi"
+
+  # Hindi Spiritual Story - Vrindavan & Mathura
+  - id: hi_spiritual_story_001
+    url: "https://www.youtube.com/watch?v=dpzM0Wcaiyo"
+    bucket: hindi
+    language_code: hi-IN
+    language_name: Hindi
+    expected_speaker: narrator_1
+    license_note: "Spiritual/devotional content - typically permissive for educational use"
+    source_notes: "Hindi spiritual story about Vrindavan and Mathura. Single narrator, devotional storytelling style."
+    candidate_segments:
+      # Story opening
+      - id: hi_spiritual_story_001_seg01
+        start: "00:20:00"
+        end: "00:20:57"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story introduction - Radha"
+
+      # Early story
+      - id: hi_spiritual_story_001_seg02
+        start: "00:21:16"
+        end: "00:22:07"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story introduction - Radha"
+
+      - id: hi_spiritual_story_001_seg03
+        start: "00:24:21"
+        end: "00:25:20"
+        emotion_hint: happy
+        style_hint: narration
+        notes: "Story introduction - Krishna"
+
+      # Middle story
+      - id: hi_spiritual_story_001_seg04
+        start: "00:25:58"
+        end: "00:26:58"
+        emotion_hint: happy
+        style_hint: narration
+        notes: "Story introduction - Krishna"
+
+      - id: hi_spiritual_story_001_seg05
+        start: "00:33:16"
+        end: "00:34:15"
+        emotion_hint: happy
+        style_hint: narration
+        notes: "Story introduction - Kamsa"
+
+      - id: hi_spiritual_story_001_seg06
+        start: "00:34:25"
+        end: "00:35:25"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story introduction - Kamsa"
+
+      - id: hi_spiritual_story_001_seg07
+        start: "00:37:21"
+        end: "00:38:18"
+        emotion_hint: happy
+        style_hint: narration
+        notes: "Krishna story continued"
+
+      - id: hi_spiritual_story_001_seg08
+        start: "00:38:24"
+        end: "00:39:17"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Krishna story continued"
+  # Hindi Story
+  - id: hi_story_001                                                                                                                                                                                             
+    url: "https://www.youtube.com/watch?v=NS5kePA8lUg"
+    bucket: hindi                                                                                                                                                                                                
+    language_code: hi-IN                                                                                                                                                                                         
+    language_name: Hindi
+    expected_speaker: narrator_1
+    license_note: "Story/educational content - verify license"
+    source_notes: "Hindi storytelling - single narrator, clear audio"
+    candidate_segments:
+      - id: hi_story_001_seg01
+        start: "00:00:53"
+        end: "00:01:55"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story opening"
+
+      - id: hi_story_001_seg02
+        start: "00:02:31"
+        end: "00:03:26"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Early story"
+
+      - id: hi_story_001_seg03
+        start: "00:03:30"
+        end: "00:04:28"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_001_seg04
+        start: "00:04:32"
+        end: "00:05:27"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_001_seg05
+        start: "00:05:38"
+        end: "00:06:28"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_001_seg06
+        start: "00:08:16"
+        end: "00:09:17"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_001_seg07
+        start: "00:09:29"
+        end: "00:10:31"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_001_seg08
+        start: "00:11:53"
+        end: "00:12:48"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story development"
+
+  - id: hi_story_002                                                                                                                                                                                             
+    url: "https://www.youtube.com/watch?v=LOkxLmrYdrI"
+
+    bucket: hindi                                                                                                                                                                                                
+    language_code: hi-IN
+    language_name: Hindi
+    expected_speaker: narrator_2
+    license_note: "Story/educational content - verify license"
+    source_notes: "Hindi storytelling - single narrator, clear audio"
+    candidate_segments:
+      - id: hi_story_002_seg01
+        start: "00:00:30"
+        end: "00:01:27"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story opening"
+
+      - id: hi_story_002_seg02
+        start: "00:01:44"
+        end: "00:02:43"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Early story"
+
+      - id: hi_story_002_seg03
+        start: "00:03:30"
+        end: "00:04:28"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_002_seg04
+        start: "00:03:40"
+        end: "00:04:37"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_002_seg05
+        start: "00:06:18"
+        end: "00:07:16"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_002_seg06
+        start: "00:07:47"
+        end: "00:08:45"
+        emotion_hint: neutral
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_002_seg07
+        start: "00:09:29"
+        end: "00:10:22"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story development"
+
+      - id: hi_story_002_seg08
+        start: "00:10:42"
+        end: "00:11:38"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Story development"
+
+# QUICK START GUIDE:
+#
+# 1. Find 4-6 good YouTube videos (mix of Indian English and Hindi)
+# 2. For EACH video:
+#    - Watch and listen carefully
+#    - Find 3-5 clean 30-60 second segments
+#    - Note exact timestamps
+#    - Replace the REPLACE_WITH_ACTUAL_VIDEO_ID with the real YouTube ID
+#
+# 3. Aim for variety:
+#    - Different speakers
+#    - Different emotions (neutral, happy, serious, calm, excited)
+#    - Different styles (formal, conversational, news, narration)
+#
+# 4. Quality checklist for each segment:
+#    ✓ Single speaker only
+#    ✓ No background music during speech
+#    ✓ No applause, crowd noise, or overlapping voices
+#    ✓ Clear, natural speech
+#    ✓ Segment doesn't cut off words at start/end
+#
+# 5. After filling this file, run:
+#    source .venv/bin/activate
+#    tts-curate download --manifest config/sources.yaml

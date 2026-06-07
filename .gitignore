@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+
+# Credentials
+.env
+.env.*
+
+# Generated data artifacts
+data/raw/
+data/segments/
+metadata/
+
+# Report files (keep final report.pdf for submission)
+report/report.md
+# report/report.pdf - KEEP THIS FOR GITHUB!
+
+# Local review exports
+*.csv
+*.jsonl

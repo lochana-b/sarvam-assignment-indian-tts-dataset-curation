@@ -1,0 +1,52 @@
+dataset:
+  name: indian-tts-youtube-curated-60min
+  target_total_minutes: 60
+  buckets:
+    indian_english:
+      language_code: en-IN
+      language_name: Indian English
+      target_minutes: 30
+    hindi:
+      language_code: hi-IN
+      language_name: Hindi
+      target_minutes: 30
+
+quality:
+  min_segment_seconds: 20
+  max_segment_seconds: 70
+  target_sample_rate: 16000
+  target_channels: 1
+
+sources:
+  - id: en_source_001
+    url: "https://www.youtube.com/watch?v=REPLACE_ME"
+    bucket: indian_english
+    language_code: en-IN
+    language_name: Indian English
+    expected_speaker: speaker_1
+    license_note: "Verify YouTube license/permission before publishing audio."
+    source_notes: "Clean interview/talk segment; avoid intro music and audience questions."
+    candidate_segments:
+      - id: en_0001
+        start: "00:01:30"
+        end: "00:02:00"
+        emotion_hint: neutral
+        style_hint: conversational
+        notes: "Check for room echo."
+
+  - id: hi_source_001
+    url: "https://www.youtube.com/watch?v=REPLACE_ME"
+    bucket: hindi
+    language_code: hi-IN
+    language_name: Hindi
+    expected_speaker: speaker_1
+    license_note: "Verify YouTube license/permission before publishing audio."
+    source_notes: "Single-speaker Hindi speech; avoid music beds."
+    candidate_segments:
+      - id: hi_0001
+        start: "00:03:15"
+        end: "00:03:45"
+        emotion_hint: calm
+        style_hint: narration
+        notes: "Reject if background music is audible."
+
